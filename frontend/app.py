@@ -15,7 +15,7 @@ from plotly.subplots import make_subplots
 #  SOZLAMALAR
 # ─────────────────────────────────────────────
 import os
-API_URL = os.environ.get("API_URL", "https://global-demography-backend.onrender.com")
+API_URL = "https://global-demography-backend.onrender.com"
 
 st.set_page_config(
     page_title="🌍 Global Demografiya Tahlili",
