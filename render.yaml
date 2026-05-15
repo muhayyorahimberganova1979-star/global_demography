@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: global-demography-api
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && gunicorn app:app --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+
+  - type: web
+    name: global-demography-front
+    env: python
+    buildCommand: "pip install -r frontend/requirements.txt"
+    startCommand: "cd frontend && streamlit run app.py --server.port $PORT --server.headless true --browser.gatherUsageStats false"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: API_URL
+        fromService:
+          type: web
+          name: global-demography-api
+          envVarKey: RENDER_EXTERNAL_URL
