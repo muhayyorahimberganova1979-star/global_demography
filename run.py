@@ -43,7 +43,7 @@ def main():
     )
 
     print("=" * 60)
-    print("  🌐 Sayt manzili: http://localhost:8501")
+    print("  🌐 Sayt manzili: https://global-demography.onrender.com")
     print("=" * 60)
     print()
     print("  To'xtatish uchun: Ctrl+C")
